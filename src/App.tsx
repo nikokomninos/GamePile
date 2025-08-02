@@ -16,7 +16,7 @@ const App = () => {
       <Router>
           <div className="flex h-screen">
             <Navbar />
-              <div className="flex-1 pl-16 bg-neutral-800 text-white overflow-auto">
+              <div className="flex-1 pl-14 bg-neutral-800 text-white overflow-auto">
                   <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/search" element={<Search />} />

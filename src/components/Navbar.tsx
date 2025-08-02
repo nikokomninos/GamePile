@@ -9,7 +9,7 @@ const Navbar = () => {
 
     return (
         <div className="fixed w-14 h-screen bg-neutral-900 flex flex-col
-                        items-center rounded-r-lg drop-shadow-md">
+                        items-center drop-shadow-md">
 
             <div className="flex flex-col items-center">
                 <NavBarIcon icon={<FaHome size="20"/>} to="/" active={location.pathname === "/"} />

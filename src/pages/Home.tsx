@@ -6,8 +6,7 @@ const Home = () => {
     return (
         <div>
             <div className="relative flex items-center justify-center
-                            h-10 mr-2 mb-5 bg-neutral-900 rounded-b-lg
-                            drop-shadow-md">
+                            h-10 mb-5 bg-neutral-900 drop-shadow-md">
                 <h1 className="font-lato font-bold flex justify-center items-center gap-2">{<FaHome size="16" />} Home</h1>
             </div>
 
