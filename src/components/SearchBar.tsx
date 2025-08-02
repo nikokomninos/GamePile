@@ -16,6 +16,7 @@ const SearchBar = () => {
         const response = await invoke("fetch_game_info", { name: search });
         const data = JSON.parse(response as string);
         setResults(data);
+        for (const result of results) { console.log(result); }
     }
 
     return (
@@ -29,7 +30,8 @@ const SearchBar = () => {
             <div>
                 <ul className="w-full flex flex-wrap items-center justify-center">
                     {results.map((_, index) => (
-                        <GameCard name={results[index].name} desc={results[index].summary}/>
+                        <GameCard name={results[index].name} desc={results[index].summary} cover={results[index].cover?.url.replace("t_thumb", "t_cover_big") ?? "/src/assets/fallback.png"} 
+                        platform_name={results[index].platforms?.[0]?.abbreviation}/>
                     ))}
                 </ul>
             </div>

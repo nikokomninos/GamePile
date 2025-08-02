@@ -3,7 +3,7 @@ async fn fetch_game_info(name: String) -> Result<String, String> {
     let client_id = std::env::var("IGDB_CLIENT_ID").map_err(|e| e.to_string())?;
     let authorization = format!("Bearer {}", std::env::var("IGDB_AUTHORIZATION").map_err(|e| e.to_string())?);
 
-    let query = format!("search \"{}\"; fields name, summary, cover.url;", name);
+    let query = format!("search \"{}\"; fields name, summary, cover.url, platforms.abbreviation; limit 100;", name);
 
     let client = reqwest::Client::new();
     let res = client.post("https://api.igdb.com/v4/games")
