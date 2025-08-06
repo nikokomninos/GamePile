@@ -2,7 +2,7 @@ import { IoLogoGameControllerB } from "react-icons/io";
 
 const GameCard = ({ name="Game Name", desc="No description", cover, platform_name="N/A" }: { name: string, desc: string, cover: string, platform_name: string }) => {
     return (
-        <div className="w-82 h-40 m-2 rounded-lg bg-neutral-900 flex items-center justify-center font-lato
+        <div className="w-82 h-40 m-2 rounded-lg bg-neutral-950 flex items-center justify-center font-lato
                         hover:drop-shadow-2xl transition-all duration-150 ease-linear">
             <div className="w-20 h-35 mr-2 rounded-lg flex flex-col items-center">
                 <div className="w-20 h-25 mb-2 rounded-lg">

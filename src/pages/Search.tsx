@@ -8,8 +8,8 @@ const Search = () => {
     return (
         <div>
             <div className="relative flex items-center justify-center
-                            h-10 mb-5 bg-neutral-900 drop-shadow-md">
-                <h1 className="font-lato font-bold flex justify-center items-center gap-2">{<FaSearch size="14" />} Search</h1>
+                            h-5 mb-5 bg-neutral-800 drop-shadow-md">
+                <h1 className="font-lato font-bold text-xs flex justify-center items-center gap-2">{<FaSearch size="10" />} Search</h1>
             </div>
 
             <div className="flex items-center justify-center">

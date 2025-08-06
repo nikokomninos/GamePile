@@ -10,7 +10,11 @@ const Home = () => {
                 <h1 className="font-lato font-bold flex justify-center items-center gap-2">{<FaHome size="16" />} Home</h1>
             </div>
 
-            <div className="flex flex-row item-center justify-center">
+            <div className="font-lato flex items-center justify-center text-center mx-auto">
+                <div>
+                    <h1 className="font-bold text-5xl pb-3">GamePile</h1>
+                    <h3>A simple game backlog manager</h3>
+                </div>
             </div>
 
         </div>
