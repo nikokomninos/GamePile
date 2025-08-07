@@ -29,9 +29,10 @@ const SearchBar = () => {
             <div>
                 <ul className="w-full flex flex-wrap items-center justify-center">
                     {results.map((_, index) => (
-                        <GameCard name={results[index].name} desc={results[index].summary} 
-                        cover={results[index].cover?.url.replace("t_thumb", "t_cover_big") ?? "/src/assets/fallback.png"}
-                            platform_name={results[index].platforms?.[0]?.abbreviation} />
+                        <GameCard name={results[index].name} desc={results[index].summary}
+                            cover={results[index].cover?.url.replace("t_thumb", "t_cover_big") ?? "/src/assets/fallback.png"}
+                            platforms={results[index].platforms}
+                            screenshot={results[index].screenshots?.[0]?.url.replace("t_thumb", "t_720p")} to="/game_page" />
                     ))}
                 </ul>
             </div>

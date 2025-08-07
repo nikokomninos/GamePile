@@ -6,10 +6,10 @@ import "../index.css";
 
 import Navbar from "./components/Navbar";
 
-import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Library from "./pages/Library";
 import Settings from "./pages/Settings";
+import GamePage from "./pages/GamePage";
 
 const App = () => {
   return (
@@ -21,6 +21,7 @@ const App = () => {
                     <Route path="/" element={<Library />} />
                     <Route path="/search" element={<Search />} />
                     <Route path="/settings" element={<Settings />} />
+                    <Route path="/game_page" element={<GamePage />} />
                   </Routes>
               </div>
           </div>
