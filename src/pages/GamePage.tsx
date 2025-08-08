@@ -29,7 +29,7 @@ const GamePage = () => {
                         <p className="text-neutral-400 text-justify">{state.desc}</p>
                     </div>
 
-                    <div className="flex flex-col pl-7">
+                    <div className="flex flex-col items-end justify-end pr-4">
                         <div className="bg-neutral-800 w-50 h-full p-4 mb-3 rounded-lg text-sm">
                             <h1 className="flex justify-center items-center font-bold mb-5">Platforms</h1>
 
