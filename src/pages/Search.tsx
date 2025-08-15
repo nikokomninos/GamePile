@@ -1,3 +1,10 @@
+/**
+ * Search Page
+ * Route - redirects from hitting search button on navbar
+ *
+ * Allows the user to search for games
+ */
+
 import { FaSearch } from "react-icons/fa";
 
 import SearchBar from "../components/SearchBar";

@@ -1,3 +1,8 @@
+/**
+ * Navbar component
+ * A navbar displayed on the side of the application
+ */
+
 import { Link, useLocation } from "react-router-dom";
 
 import { FaHome, FaSearch } from "react-icons/fa";
@@ -24,6 +29,15 @@ const Navbar = () => {
     )
 }
 
+/**
+ * NavBarIcon component
+ * A clickable icon to be displayed on the navbar
+ *
+ * Props:
+ * - icon: a JSX element containing an icon (from React Icons)
+ * - to: a React DOM route (leading to /gameinfo)
+ * - active: sets the icon to the active location when clicked
+ */
 const NavBarIcon = ({ icon, to, active }: { icon: JSX.Element, to: string, active: boolean }) => {
     return (
         <Link to={to}>

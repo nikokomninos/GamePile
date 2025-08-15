@@ -1,3 +1,10 @@
+/**
+ * Settings Page
+ * Route - redirects from hitting settings button on navbar
+ *
+ * Allows the user to change various settings
+ */
+
 import { IoIosSettings } from "react-icons/io";
 
 const Settings = () => {

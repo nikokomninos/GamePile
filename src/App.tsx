@@ -9,7 +9,7 @@ import Navbar from "./components/Navbar";
 import Search from "./pages/Search";
 import Library from "./pages/Library";
 import Settings from "./pages/Settings";
-import GamePage from "./pages/GamePage";
+import GameInfo from "./pages/GameInfo";
 
 const App = () => {
   return (
@@ -21,7 +21,7 @@ const App = () => {
                     <Route path="/" element={<Library />} />
                     <Route path="/search" element={<Search />} />
                     <Route path="/settings" element={<Settings />} />
-                    <Route path="/game_page" element={<GamePage />} />
+                    <Route path="/gameinfo" element={<GameInfo />} />
                   </Routes>
               </div>
           </div>

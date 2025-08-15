@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "gamepile",
+  "productName": "GamePile",
   "version": "0.1.0",
   "identifier": "com.gamepile.app",
   "build": {
@@ -12,9 +12,12 @@
   "app": {
     "windows": [
       {
-        "title": "gamepile",
-        "width": 800,
-        "height": 600
+        "title": "GamePile",
+        "width": 1200,
+        "height": 800,
+        "minWidth": 800,
+        "minHeight": 600,
+        "resizable": true
       }
     ],
     "security": {

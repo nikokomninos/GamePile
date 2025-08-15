@@ -8,6 +8,7 @@
  */
 
 import { useLocation } from "react-router-dom";
+import { invoke } from "@tauri-apps/api/core";
 
 import { IoLogoGameControllerB } from "react-icons/io";
 
@@ -15,6 +16,22 @@ const GameInfo = () => {
     // Pass in game info from GameCard
     const location = useLocation();
     const state = location.state;
+
+    const addGameToCategory = async (category: String) => {
+        try {
+            await invoke("db_add_game", {
+                category: category,
+                igdbId: state.igdb_id,
+                name: state.name,
+                desc: state.desc,
+                cover: state.cover,
+                platforms: state.platforms.map(platform => platform.name),
+                screenshot: state.screenshot
+            });
+        } catch (err) {
+            console.log(err);
+        }
+    }
 
     return (
         <div className="font-lato">
@@ -57,25 +74,40 @@ const GameInfo = () => {
                                         rounded-lg items-center justify-center text-sm">
                             <h1 className="flex justify-center items-center font-bold mb-5">Add To List</h1>
                             <ul>
-                                <li className="flex items-center justify-center
+                                <button onClick={() => addGameToCategory("want_to_play")} className="flex items-center justify-center
                                                bg-neutral-700 w-30 h-6
-                                               rounded-lg font-bold mb-2">Want To Play</li>
+                                               rounded-lg font-bold mb-2
+                                               transition-all duration-100
+                                               ease-linear hover:bg-neutral-600
+                                               hover:rounded-sm">Want To Play</button>
 
-                                <li className="flex items-center justify-center
+                                <button onClick={() => addGameToCategory("playing")} className="flex items-center justify-center
                                                bg-neutral-700 w-30 h-6
-                                               rounded-lg font-bold mb-2">Playing</li>
+                                               rounded-lg font-bold mb-2
+                                               transition-all duration-100
+                                               ease-linear hover:bg-neutral-600
+                                               hover:rounded-sm">Playing</button>
 
-                                <li className="flex items-center justify-center
+                                <button onClick={() => addGameToCategory("beaten")} className="flex items-center justify-center
                                                bg-neutral-700 w-30 h-6
-                                               rounded-lg font-bold mb-2">Beaten</li>
+                                               rounded-lg font-bold mb-2
+                                               transition-all duration-100
+                                               ease-linear hover:bg-neutral-600
+                                               hover:rounded-sm">Beaten</button>
 
-                                <li className="flex items-center justify-center
+                                <button onClick={() => addGameToCategory("on_hold")} className="flex items-center justify-center
                                                bg-neutral-700 w-30 h-6
-                                               rounded-lg font-bold mb-2">On Hold</li>
+                                               rounded-lg font-bold mb-2
+                                               transition-all duration-100
+                                               ease-linear hover:bg-neutral-600
+                                               hover:rounded-sm">On Hold</button>
 
-                                <li className="flex items-center justify-center
+                                <button onClick={() => addGameToCategory("abandoned")} className="flex items-center justify-center
                                                bg-neutral-700 w-30 h-6
-                                               rounded-lg font-bold mb-2">Abandoned</li>
+                                               rounded-lg font-bold mb-2
+                                               transition-all duration-100
+                                               ease-linear hover:bg-neutral-600
+                                               hover:rounded-sm">Abandoned</button>
                             </ul>
                         </div>
 
