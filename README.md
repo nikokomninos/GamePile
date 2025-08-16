@@ -2,12 +2,12 @@
 
 GamePile is a simple video game backlog manager powered by the IGDB database, React and Tauri, built to learn React, TypeScript and external API calls.
 
-<p style="text-align: center">
-    <img src="screenshots/0.png" width="300" />
-    <img src="screenshots/1.png" width="300" />
-    <img src="screenshots/2.png" width="300" />
-    <img src="screenshots/3.png" width="300" />
-</p>
+<div style="display: flex justify-content: center">
+    <img src="screenshots/0.png" width="400" />
+    <img src="screenshots/1.png" width="400" />
+    <img src="screenshots/2.png" width="400" />
+    <img src="screenshots/3.png" width="400" />
+</div>
 
 ## Why?
 
