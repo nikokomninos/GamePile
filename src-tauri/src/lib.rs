@@ -82,13 +82,21 @@ async fn db_list_category(category: String) -> Result<String, String> {
     db::list_category(&category).map_err(|e| e.to_string())
 }
 
+#[tauri::command]
+async fn db_remove_game(igdb_id: i32) -> String {
+    db::remove_game(&igdb_id);
+    "Game successfully removed".into()
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     dotenvy::dotenv().ok();
     db::init().expect("Failed to init database");
     tauri::Builder::default()
         .plugin(tauri_plugin_opener::init())
-        .invoke_handler(tauri::generate_handler![search_games, fetch_game_info, db_add_game, db_list_category])
+        .invoke_handler(tauri::generate_handler![search_games, fetch_game_info,
+                                                 db_add_game, db_list_category,
+                                                 db_remove_game])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

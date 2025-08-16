@@ -21,7 +21,7 @@ const Library = () => {
                 <LibraryCategoryPreview category="Playing" dbCategory="playing" />
                 <LibraryCategoryPreview category="Beaten" dbCategory="beaten" />
                 <LibraryCategoryPreview category="On Hold" dbCategory="on_hold" />
-                <LibraryCategoryPreview category="Dropped" dbCategory="dropped" />
+                <LibraryCategoryPreview category="Abandoned" dbCategory="abandoned" />
             </div>
 
         </div>

@@ -28,8 +28,16 @@ const GameInfo = () => {
                 platforms: state.platforms.map(platform => platform.name),
                 screenshot: state.screenshot
             });
-        } catch (err) {
-            console.log(err);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    const removeGameFromBacklog = async () => {
+        try {
+            await invoke("db_remove_game", {igdbId: state.igdb_id})
+        } catch (e) {
+            console.log(e);
         }
     }
 
@@ -65,13 +73,13 @@ const GameInfo = () => {
                             <h1 className="flex justify-center items-center font-bold mb-5">Platforms</h1>
                             <ul className="list-disc pl-5">
                                 {state.platforms?.map((platform, index) => (
-                                    <li key={index} className="mb-2 gap-2">{platform.name}</li>
+                                    <li key={index} className="mb-2 gap-2">{platform.name || platform}</li>
                                 ))}
                             </ul>
                         </div>
 
                         <div className="flex flex-col bg-neutral-800 w-50 h-full p-4
-                                        rounded-lg items-center justify-center text-sm">
+                                        rounded-lg items-center justify-center text-sm mb-3">
                             <h1 className="flex justify-center items-center font-bold mb-5">Add To List</h1>
                             <ul>
                                 <button onClick={() => addGameToCategory("want_to_play")} className="flex items-center justify-center
@@ -79,36 +87,44 @@ const GameInfo = () => {
                                                rounded-lg font-bold mb-2
                                                transition-all duration-100
                                                ease-linear hover:bg-neutral-600
-                                               hover:rounded-sm">Want To Play</button>
+                                               hover:rounded-sm cursor-pointer">Want To Play</button>
 
                                 <button onClick={() => addGameToCategory("playing")} className="flex items-center justify-center
                                                bg-neutral-700 w-30 h-6
                                                rounded-lg font-bold mb-2
                                                transition-all duration-100
                                                ease-linear hover:bg-neutral-600
-                                               hover:rounded-sm">Playing</button>
+                                               hover:rounded-sm cursor-pointer">Playing</button>
 
                                 <button onClick={() => addGameToCategory("beaten")} className="flex items-center justify-center
                                                bg-neutral-700 w-30 h-6
                                                rounded-lg font-bold mb-2
                                                transition-all duration-100
                                                ease-linear hover:bg-neutral-600
-                                               hover:rounded-sm">Beaten</button>
+                                               hover:rounded-sm cursor-pointer">Beaten</button>
 
                                 <button onClick={() => addGameToCategory("on_hold")} className="flex items-center justify-center
                                                bg-neutral-700 w-30 h-6
                                                rounded-lg font-bold mb-2
                                                transition-all duration-100
                                                ease-linear hover:bg-neutral-600
-                                               hover:rounded-sm">On Hold</button>
+                                               hover:rounded-sm cursor-pointer">On Hold</button>
 
                                 <button onClick={() => addGameToCategory("abandoned")} className="flex items-center justify-center
                                                bg-neutral-700 w-30 h-6
                                                rounded-lg font-bold mb-2
                                                transition-all duration-100
                                                ease-linear hover:bg-neutral-600
-                                               hover:rounded-sm">Abandoned</button>
+                                               hover:rounded-sm cursor-pointer">Abandoned</button>
                             </ul>
+                        </div>
+
+                        <div className="flex flex-col bg-neutral-800 w-50 h-full p-4
+                                        rounded-lg items-center justify-center text-sm">
+                            <button onClick={ () => removeGameFromBacklog() }className="flex items-center justify-center bg-neutral-700 h-12
+                                               rounded-lg font-bold transition-all
+                                               duration-100 ease-linear hover:bg-neutral-600
+                                               hover:rounded-sm cursor-pointer">Remove From All Categories</button>
                         </div>
 
                     </div>

@@ -10,6 +10,7 @@ import Search from "./pages/Search";
 import Library from "./pages/Library";
 import Settings from "./pages/Settings";
 import GameInfo from "./pages/GameInfo";
+import LibraryCategory from "./pages/LibraryCategory";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
                     <Route path="/search" element={<Search />} />
                     <Route path="/settings" element={<Settings />} />
                     <Route path="/gameinfo" element={<GameInfo />} />
+                    <Route path="/librarycategory" element={<LibraryCategory />} />
                   </Routes>
               </div>
           </div>

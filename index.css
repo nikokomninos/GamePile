@@ -18,6 +18,10 @@
     --font-lato: Lato;
 }
 
+html, body {
+    overscroll-behavior: none;
+}
+
 body {
     @apply bg-neutral-900 text-white;
 }
