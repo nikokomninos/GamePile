@@ -23,5 +23,9 @@ html, body {
 }
 
 body {
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
     @apply bg-neutral-900 text-white;
 }
